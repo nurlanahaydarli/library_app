@@ -763,3 +763,52 @@ textarea{
 .main_section.margin_0{
     margin-left: 0;
 }
+
+.modal_alert.show,
+.modal_data.show{
+display: block;
+}
+.modal_alert,
+.modal_data{
+    background-color: rgba(0,0,0,0.4);
+}
+
+.join_us_container .join_us_box{
+    padding: 35px 55px;
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 675px;
+    width: 100%;
+    z-index: 3;
+    display: none;
+}
+.join_us_shadow{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 2;
+}
+.join_us_container .join_us_box h2{
+    color: #000;
+    text-align: center;
+    padding: 35px 0;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.join_us_container .join_us_box input{
+    border-radius: 0;
+    margin-bottom: 36px;
+}
+.join_us_container .join_us_box button{
+    margin-top: 35px;
+    border-radius: 0;
+}

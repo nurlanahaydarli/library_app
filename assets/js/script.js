@@ -3,8 +3,19 @@ let menu_icon = document.querySelector(".menu_icon")
 let nav_list = document.querySelector(".nav_list")
 let menu_btn = document.querySelector(".menu_btn")
 let main_section = document.querySelector(".main_section")
-let admin_nav = document.querySelector(".admin_nav")
+let join_us_shadow = document.querySelector(".join_us_shadow")
+let join_us_box = document.querySelector(".join_us_box")
+let join_us_link = document.querySelector(".join_us_link")
 
+
+join_us_link?.addEventListener("click",function (e){
+    join_us_shadow.style.display= "block"
+    join_us_box.style.display= "block"
+})
+join_us_shadow?.addEventListener("click",function (e){
+    join_us_shadow.style.display= "none"
+    join_us_box.style.display= "none"
+})
 
 window.addEventListener("resize", function () {
     let window_width = window.innerWidth;
@@ -115,15 +126,17 @@ log_out?.addEventListener("click", function (e) {
         admin_section.classList.remove("hide")
     }
 })
+//
+// function isLoginFN() {
+//     if (login_storage.isLogin === true) {
+//         login_section.classList.remove("show")
+//         admin_section.classList.remove("hide")
+//     } else {
+//         login_section.classList.add("show")
+//         admin_section.classList.add("hide")
+//     }
+// }
+//
+// isLoginFN()
 
-function isLoginFN() {
-    if (login_storage.isLogin === true) {
-        login_section.classList.remove("show")
-        admin_section.classList.remove("hide")
-    } else {
-        login_section.classList.add("show")
-        admin_section.classList.add("hide")
-    }
-}
 
-isLoginFN()
