@@ -16,7 +16,7 @@
 <body>
 
 
-<section class="login_section show">
+<section class="login_section ">
     <div class="login_logo">
         <img src="../assets/img/footer_logo.svg" alt="">
     </div>
@@ -33,7 +33,7 @@
         </div>
     </div>
 </section>
-<section class="admin_section hide">
+<section class="admin_section ">
     <aside class="admin_nav ">
         <img src="../assets/img/footer_logo.svg" class="logo_img" alt="">
         <ul>
@@ -88,35 +88,10 @@
                     </div>
                     <div class="search_box">
                         <div class="search_input">
-                            <input type="text" placeholder="Search">
-                            <button class="search_btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="26"
-                                     viewBox="0 0 19 26" fill="none">
-                                    <path
-                                            d="M7.8 17.0857C11.5555 17.0857 14.6 13.5843 14.6 9.26503C14.6 4.94578 11.5555 1.44434 7.8 1.44434C4.04446 1.44434 1 4.94578 1 9.26503C1 13.5843 4.04446 17.0857 7.8 17.0857Z"
-                                            stroke="#F2F2F2" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round"/>
-                                    <path d="M17.9999 24.5555L13.4666 18.5396" stroke="#F2F2F2" stroke-width="2"
-                                          stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
+                            <input type="text" placeholder="Search" id="book_name_search">
                         </div>
-                        <div class="search_result">
-                            <ul>
-                                <li>
-                                    <span><i class="far fa-clock"></i></span>
-                                    <span>Dan Brown</span>
-                                </li>
-                                <li>
-                                    <span><i class="far fa-clock"></i></span>
-                                    <span>Dan Brown</span>
-                                </li>
-                                <li>
-                                    <span><i class="far fa-clock"></i></span>
-                                    <span>Dan Brown</span>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul class="search_result" id="search_result">
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -288,7 +263,7 @@
             <div class="modal-body">
                 <div class="">
                     <label for="type_name" class="mb-2">Type name</label>
-                    <input type="text" placeholder="category_name" class="form-control" id="type_name">
+                    <input type="text" placeholder="category name" class="form-control" id="type_name">
                 </div>
                 <div class="alert_box"></div>
                 <div class="modal-footer">
@@ -349,6 +324,7 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
 <script src="../assets/js/index.js" type="module"></script>
-<script src="../assets/js/script.js"></script>
+<script src="../assets/js/script-admin.js"></script>
+<script src="../assets/js/search_book.js"></script>
 </body>
 </html>

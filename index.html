@@ -1,320 +1,197 @@
-<!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" href="./src/assets/icon/logo.svg" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <title>Library App</title>
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/home.css">
+    <link rel="stylesheet" href="./src/styles/header-footer.css">
+    <link rel="stylesheet" href="./src/styles/sweetalert2.min.css">
+
 </head>
+
 <body>
-
-
-<header>
-    <div class="container">
-        <div class="header_box">
-            <a href="index.html" class="logo_box">
-                <img src="assets/img/logo.svg" alt="">
-            </a>
-            <div class="nav_list">
-                <a href="#" class="close_nav"><img src="assets/icons/close_icon.svg" alt=""></a>
-                <ul>
-                    <li>
-                        <a href="index.html" class="active">Home</a>
-                    </li>
-                    <li>
-                        <a href="pages/catalog.html">Catalog</a>
-                    </li>
-                    <li>
-                        <a href="pages/about.html">About Store</a>
-                    </li>
-                    <li>
-                        <a href="pages/contact.html">Contact Us</a>
-                    </li>
-                    <li>
-                        <a href="pages/search.html">Search</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="join_us">
-                <a href="#" class="join_us_link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M35.7405 26.2448C35.7405 29.7282 30.9635 30.1309 27.3713 30.1309L27.1142 30.1306C24.8256 30.1251 19 29.9806 19 26.2237C19 22.8114 23.585 22.3554 27.1499 22.3382L27.6284 22.3379C29.9169 22.3434 35.7405 22.4879 35.7405 26.2448ZM27.3713 23.9229C22.8681 23.9229 20.5853 24.6965 20.5853 26.2237C20.5853 27.7646 22.8681 28.5456 27.3713 28.5456C31.8735 28.5456 34.1552 27.772 34.1552 26.2448C34.1552 24.7039 31.8735 23.9229 27.3713 23.9229ZM27.3713 9.13086C30.4657 9.13086 32.9821 11.6483 32.9821 14.7427C32.9821 17.8372 30.4657 20.3535 27.3713 20.3535H27.3375C24.2494 20.344 21.7478 17.8256 21.7583 14.7396C21.7583 11.6483 24.2758 9.13086 27.3713 9.13086ZM27.3713 10.64C25.1086 10.64 23.2675 12.48 23.2675 14.7427C23.2602 16.998 25.0874 18.837 27.3406 18.8454L27.3713 19.6V18.8454C29.633 18.8454 31.4729 17.0044 31.4729 14.7427C31.4729 12.48 29.633 10.64 27.3713 10.64Z"
-                              fill="black"/>
-                    </svg>
-                    <span>Join us</span>
-                </a>
-                <a href="#" class="menu_icon">
-                    <img src="assets/icons/menu_incon.svg" alt="">
-                </a>
-            </div>
+    <div id="overlay-back"></div>
+    <div class="mobile-menu">
+        <button class="mobile-close-menu"><img src="./src/assets/icon/cloneMenu.svg" alt=""></button>
+        <ul>
+            <li><a id="home_btn" style="font-weight: 700; text-decoration: underline; color: #E16A00;" href="">Home</a>
+            </li>
+            <li><a id="catalog_btn" href="./src/pages/catalog.html">Catalog</a></li>
+            <li><a id="about_btn" href="./src/pages/about.html">About Store</a></li>
+            <li><a id="contact_btn" href="./src/pages/contact.html">Contact Us</a></li>
+            <li><a id="search_btn" href="./src/pages/search.html">Search</a></li>
+        </ul>
+    </div>
+    <div class="join-us-modal">
+        <span>Join Us</span>
+        <div class="join-us-form">
+            <input id="joinUsFullnameInput" type="text" placeholder="Full Name">
+            <input id="joinUsEmailInput" type="email" placeholder="Email">
+        </div>
+        <button class="joinBtn" id="joinBtn">Join</button>
+        <div class="joinUsAlertBox">
+            <!-- <div class="alert mt-3 alert-success" role="alert">
+                Your request has been sent successfully!
+            </div> -->
         </div>
     </div>
-</header>
-<main>
-    <section class="header_main">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="header_text">
-                        <h1>Books from A to Z</h1>
-                        <p>In our store you can find a book for every taste. A large assortment. Nice prices.
-                            Interesting stories.</p>
-                        <a href="pages/catalog.html" class="main_btn">Go to Catalog</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="header_img">
-                        <img src="assets/img/header_img.svg" alt="">
-                    </div>
-                </div>
+    <header>
+        <div class="mobile-logo-container">
+            <img src="./src/assets/icon/books-mobile.svg" alt="">
+            <div>
+                <h1>LIBRARY</h1>
+                <div class="mobile-line"></div>
+                <p>Book store</p>
             </div>
         </div>
-    </section>
-    <section class="catalog_section section_padding">
-        <div class="container">
-            <div class="section_title">
-                <h2>Catalog</h2>
+        <nav>
+            <ul>
+                <li><a style="font-weight: 700; text-decoration: underline; color: #E16A00;" href="">Home</a></li>
+                <li><a href="./src/pages/catalog.html">Catalog</a></li>
+                <li><a href="./src/pages/about.html">About Store</a></li>
+                <li><a href="./src/pages/contact.html">Contact Us</a></li>
+                <li><a href="./src/pages/search.html">Search</a></li>
+            </ul>
+        </nav>
+        <div class="account">
+            <img src="./src/assets/icon/profile.svg" alt="">
+            <button id="joinUsBtn">Join us</button>
+        </div>
+        <button class="mobile-menu-btn"><img src="./src/assets/icon/hamburgerMenu.svg" alt=""></button>
+    </header>
+    <main>
+        <section class="section-1">
+            <div class="textbtn">
+                <h1 class="sec1-title">Books from A to Z</h1>
+                <p class="sec1-text">In our store you can find a book for every taste. A large assortment. Nice prices.
+                    Interesting stories.</p>
+                <button class="sec1-btn">Go to catalogs</button>
             </div>
-            <div class="catalog_list">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a href="#" class="catalog_box">
-                            Books
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="catalog_box">
-                            Electronic books
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="catalog_box">
-                            Audiobooks
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="catalog_box">
-                            Toys, creativity
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="catalog_box">
-                            Book accessories
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="catalog_box">
-                            Notepads
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="catalog_box">
-                            Board games
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="catalog_box">
-                            Present
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="catalog_box">
-                            Stock
-                        </a>
+            <div>
+                <img src="./src/assets/icon/homepagebook.svg" alt="">
+            </div>
+        </section>
+        <section class="catalog_section section_padding">
+            <div class="container">
+                <div class="section_title">
+                    <h2>Catalog</h2>
+                </div>
+                <div class="catalog_list">
+                    <div class="row" id="catalog_list">
+
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="about_section section_padding">
-        <div class="container">
-            <div class="section_title">
+        </section>
+        <section class="section-3">
+            <div class="sec3-title">
                 <h2>About Store</h2>
             </div>
-            <div class="about_count_list">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="counter_box">
-                            <h4>
-                                35
-                            </h4>
-                            <p>Branches the country</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="counter_box">
-                            <h4>
-                                898
-                            </h4>
-                            <p>Products catalog</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="counter_box">
-                            <h4>
-                                8659
-                            </h4>
-                            <p>Buyers</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="counter_box">
-                            <h4>
-                                35
-                            </h4>
-                            <p>Hours delivery to cities</p>
+            <div class="statistic">
+                <div class="sec3-statistic">
+                    <p class="sec3-num">35</p>
+                    <p class="sec3-text">Branches the country</p>
+                </div>
+                <div class="sec3-statistic">
+                    <p class="sec3-num">898</p>
+                    <p class="sec3-text">Products catalog</p>
+                </div>
+                <div class="sec3-statistic">
+                    <p class="sec3-num">8659</p>
+                    <p class="sec3-text">Buyers</p>
+                </div>
+                <div class="sec3-statistic">
+                    <p class="sec3-num">72</p>
+                    <p class="sec3-text">Hours delivery to cities</p>
+                </div>
+            </div>
+        </section>
+        <section class="section-4">
+            <div class="sec4-content">
+                <div>
+                    <h2 class="sec4-title">Delivery</h2>
+                </div>
+                <p class="sec4-text">We work without holidays and weekends! Residents of Kiev can receive an order on
+                    the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5
+                    days, depending on the location of the settlement and the selected delivery method. Orders over UAH
+                    1000 are delivered free of charge *. You can see the available methods, exact terms and cost of
+                    delivery during checkout in the order basket, aafter selecting the delivery city.
+                </p>
+                <p class="sec4-text">More details</p>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="social-media">
+            <img src="./src/assets/image/social-media-group.svg" alt="">
+        </div>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="footer-logo-container">
+                        <img src="./src/assets/icon/books-footer-logo.svg" alt="">
+                        <div>
+                            <h1>LIBRARY</h1>
+                            <div class="footer-logo-line"></div>
+                            <p>BOOK STORE</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="delivery_section section_padding">
-        <div class="container">
-            <div class="section_title">
-                <h2>Delivery</h2>
-            </div>
-            <div class="delivery_text">
-                <p>We work without holidays and weekends! Residents of Kiev can receive an order on the day of its
-                    registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending
-                    on the location of the settlement and the selected delivery method. Orders over UAH 1000 are
-                    delivered free of charge *. You can see the available methods, exact terms and cost of delivery
-                    during checkout in the order basket, aafter selecting the delivery city.
-                    More details </p>
-            </div>
-        </div>
-    </section>
-    <section class="follow_us_section section_padding">
-        <div class="container">
-            <div class="section_title">
-                <h2>Follow us on social media</h2>
-            </div>
-            <ul class="follow_us_list">
-                <li>
-                    <a href="#">
-                        <img src="assets/icons/facebook.svg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/icons/twitter.svg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/icons/instagram.svg" alt="">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
-</main>
-<footer>
-    <div class="container">
-        <div class="footer_top">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="footer_logo">
-                        <a href="index.html">
-                            <img src="assets/img/footer_logo.svg" alt="">
-                        </a>
-                    </div>
+                <div class="popular">
+                    <p>Popular</p>
+                    <span>Programming</span>
+                    <span>Books for children</span>
+                    <span>Psychology</span>
+                    <span>Business</span>
                 </div>
-                <div class="col-lg-7">
-                    <div class="footer_list">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <ul>
-                                    <h4>
-                                        Popular
-                                    </h4>
-                                    <li>
-                                        <a href="#">Programming</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Books for children</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Psychology
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Business</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4">
-                                <ul>
-                                    <h4>
-                                        Cash
-                                    </h4>
-                                    <li>
-                                        <a href="#">Delivery</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Payment</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">About the store</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4">
-                                <ul>
-                                    <h4>
-                                        Help
-                                    </h4>
-                                    <li>
-                                        <a href="#">Contacts</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Purchase returns</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Buyer help
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="information">
+                    <p>Information</p>
+                    <span>Delivery</span>
+                    <span>Payment</span>
+                    <span>About the store</span>
+                </div>
+                <div class="help">
+                    <p>Help</p>
+                    <span>Contacts</span>
+                    <span>Purchase returns</span>
+                    <span>Buyer help</span>
+                </div>
+                <div class="phone-num">
+                    <p>+38 (071) 339-16-26</p>
+                    <button>Request a call </button>
+                </div>
+                <div class="mobile-footer-nav">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="./src/pages/catalog.html">Catalog</a></li>
+                        <li><a href="./src/pages/about.html">About Store</a></li>
+                        <li><a href="./src/pages/contact.html">Contact Us</a></li>
+                        <li><a href="./src/pages/search.html">Search</a></li>
+                    </ul>
                 </div>
             </div>
+            <div class="mobile-footer-rights-line"></div>
+            <span class="rights">All rights reserved © 2003-2021 Library BookStore EACamp</span>
         </div>
-        <p class="site_rights">
-            All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
-        </p>
-    </div>
-</footer>
-<div class="join_us_container">
-    <div class="join_us_shadow"></div>
-    <div class="join_us_box">
-        <h2>Join Us</h2>
-        <div class="">
-            <input type="text" class="web_input" id="user_name" placeholder="Full name">
-        </div>
-        <div class="">
-            <input type="email" class="web_input" id="user_email" placeholder="Email">
-        </div>
-        <div class="alert_box"></div>
-        <button class="form_btn submit_join" >Join</button>
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
-<script src="assets/js/index.js" type="module"></script>
-<script src="assets/js/script.js"></script>
+    </footer>
+    <script type="module" src="./src/js/join-us-btn.js"></script>
+    <script type="module" src="./src/js/home_catalog.js"></script>
+    <script src="src/js/clear_data.js"></script>
+    <script src="src/js/sweetalert2.min.js"></script>
+    <script src="./src/js/book_page_comment.js"></script>
+    <script src="./src/js/mobile-menu-btn.js"></script>
 </body>
+
 </html>

@@ -27,6 +27,9 @@ let type_name = document.querySelector("#type_name")
 let book_category_submit = document.querySelector(".book_category_submit")
 let book_type = document.querySelector("#book_type")
 let modal_category = document.querySelector(".modal_category")
+let about_img_box = document.querySelector(".about_img_box")
+let about_title_web = document.querySelector(".about_title")
+let about_desc = document.querySelector(".about_desc")
 
 
 
@@ -60,6 +63,7 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 const db = getDatabase()
+/* ======================== Firebase Methods ========================= */
 
 function writePushData(collection, data) {
     try {
@@ -74,7 +78,37 @@ function writePushData(collection, data) {
         console.log(err, 'err')
     }
 }
+function writeSetData(collection, data) {
+    try {
+        if (!collection) {
+            alert('Required collection')
+            return
+        }
+        const contactRef = ref(db, collection)
+        set(contactRef, data)
+        // location.reload()
+    } catch (err) {
+        console.log(err, 'err')
+    }
+}
+function convertData(d) {
+    const newData = Object.entries(d);
+    const myNewData = newData.map((arr) => {
+        const newObj = {
+            id: arr[0],
+            ...arr[1],
+        };
+        return newObj;
+    });
+    return myNewData;
+}
+function rmvData(id, col) {
+    const dataRef = ref(db, col + "/" + id);
+    remove(dataRef);
+}
 
+
+/* ======================== Submit Forms ========================= */
 
 contact_form?.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -160,7 +194,7 @@ add_about_btn?.addEventListener("click", function (e) {
         image,
         about,
     }
-    writePushData('about', form)
+    writeSetData('about', form)
     if (form) {
         alert_box.innerHTML = `
         <div class="alert mt-3 alert-success" role="alert">
@@ -204,14 +238,54 @@ book_category_submit?.addEventListener("click", function (e) {
     modal_category.style.display="none"
 
 })
+submit_join?.addEventListener("click",function (e){
+    e.preventDefault()
+    let name = user_name.value;
+    let email = user_email.value;
+    if (!name) {
+        user_name.classList.add("is-invalid")
+    } else {
+        user_name.classList.remove("is-invalid")
+    }
+    if (!email) {
+        user_email.classList.add("is-invalid")
+    } else {
+        user_email.classList.remove("is-invalid")
+    }
+    if (!name || !email) {
+        return
+    }
+    let form = {
+        name,
+        email,
+    }
+    writePushData('join_us', form)
+    if (form) {
+        alert_box.innerHTML = `
+        <div class="alert mt-3 alert-success" role="alert">
+          About added!
+        </div>
+        `
+    }
+    join_us_box.style.display="none"
+    join_us_shadow.style.display="none"
+
+    setTimeout(() => {
+        alert_box.innerHTML = ''
+    }, 1000)
+    user_name.value= "";
+    user_email.value = "";
+})
+
+
+/* ======================== Show About Collection ========================= */
 function showAboutData(data) {
 
 }
-
 showAboutData()
 
+/* ======================== Show Join Us Collection ========================= */
 onValue(ref(db, "join_us"), renderJoinUS);
-
 function renderJoinUS(snaphot) {
     const data = convertData(snaphot.val());
     let data_list = data.map((item, index) => {
@@ -227,8 +301,8 @@ function renderJoinUS(snaphot) {
     return data
 }
 
+/* ======================== Show Categories Collection ========================= */
 onValue(ref(db, "categories"), renderCategory);
-
 function  renderCategory(snaphot){
     const data = convertData(snaphot.val());
     let data_list = data.map((item, index) => {
@@ -239,20 +313,21 @@ function  renderCategory(snaphot){
     book_type.innerHTML = data_list;
     return data
 }
-
-function convertData(d) {
-    const newData = Object.entries(d);
-    const myNewData = newData.map((arr) => {
-        const newObj = {
-            id: arr[0],
-            ...arr[1],
-        };
-        return newObj;
-    });
-    return myNewData;
+/* ======================== Show Abput Collection ========================= */
+onValue(ref(db, "about"), renderAbout);
+function  renderAbout(snaphot){
+    const data = snaphot.val();
+    // about_title_web.innerHTML = data.title
+    // about_desc.innerHTML = data.about
+    // about_img_box.src = data.image
+    // about_img_box.alt = data.title
+    description_about.value = data.about
+    image_url.value= data.image
+    about_title.value = data.title
+    return data
 }
 
-
+/* ======================== Show Contact Collection ========================= */
 function getDatas() {
     const db_ref = ref(db)
     get(child(db_ref, 'contacts')).then((snapshot) => {
@@ -308,7 +383,6 @@ function getDatas() {
         console.log(err, 'err')
     })
 }
-
 async function showData(id) {
     modal_data.classList.add("show");
     let dataRef = ref(db, 'contacts' + "/" + id);
@@ -327,21 +401,9 @@ async function showData(id) {
         console.error("Error getting data:", error);
     });
 }
-
 getDatas()
 
-function rmvData(id, col) {
-    const dataRef = ref(db, col + "/" + id);
-    remove(dataRef);
-}
-
-close_alert?.addEventListener('click', function () {
-    modal_alert.classList.remove("show")
-})
-close_data?.addEventListener('click', function () {
-    modal_data.classList.remove("show")
-})
-
+/* ======================== Remove Contacts Collection ========================= */
 function handlerRmv(id) {
     modal_alert.classList.add("show");
     modal_body_custom.innerHTML = `
@@ -357,43 +419,15 @@ function handlerRmv(id) {
     return id
 }
 
-
-
-submit_join?.addEventListener("click",function (e){
-    e.preventDefault()
-    let name = user_name.value;
-    let email = user_email.value;
-    if (!name) {
-        user_name.classList.add("is-invalid")
-    } else {
-        user_name.classList.remove("is-invalid")
-    }
-    if (!email) {
-        user_email.classList.add("is-invalid")
-    } else {
-        user_email.classList.remove("is-invalid")
-    }
-    if (!name || !email) {
-        return
-    }
-    let form = {
-        name,
-        email,
-    }
-    writePushData('join_us', form)
-    if (form) {
-        alert_box.innerHTML = `
-        <div class="alert mt-3 alert-success" role="alert">
-          About added!
-        </div>
-        `
-    }
-    join_us_box.style.display="none"
-    join_us_shadow.style.display="none"
-
-    setTimeout(() => {
-        alert_box.innerHTML = ''
-    }, 1000)
-    user_name.value= "";
-    user_email.value = "";
+/* ======================== UI alerts Events ========================= */
+close_alert?.addEventListener('click', function () {
+    modal_alert.classList.remove("show")
 })
+close_data?.addEventListener('click', function () {
+    modal_data.classList.remove("show")
+})
+
+
+
+
+

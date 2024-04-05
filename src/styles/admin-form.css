@@ -1,0 +1,179 @@
+.book-form h3{
+    color: #333;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%; /* 35.314px */
+    margin-bottom: 18px;
+}
+body{
+    background-color: #fffaf5;
+}
+.about-store h4{
+    color: #333;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%; /* 58.856px */
+    margin-bottom: 20px;
+}
+.form{
+    padding: 16px 30px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 20px;
+}
+.form .input_box{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.form .input_box label{
+    color: #030102;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.form .input_box textarea,
+.form .input_box input,
+.form .input_box select{
+    border-radius: 10px;
+    border: 1px solid #E2E6EE;
+    background: #FFF;
+    box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+    padding:5px 8px;
+    color: #030102;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    outline: 0;
+    line-height: normal;
+}
+.form .input_box select,
+.form .input_box input{
+    height: 40px;
+}
+.form .input_box textarea{
+    min-height: 90px;
+}
+.form  button{
+    border-radius: 10px;
+    background: #FF8B00;
+    padding: 12px 24px;
+    color: #FFF;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.form  button i{
+    color: #fff;
+}
+
+
+.form{
+    padding: 16px 30px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.form .input_box{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.form .input_box label{
+    color: #030102;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.form .input_box textarea,
+.form .input_box input,
+.form .input_box select{
+    border-radius: 10px;
+    border: 1px solid #E2E6EE;
+    background: #FFF;
+    box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+    padding:5px 8px;
+    color: #030102;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    outline: 0;
+    line-height: normal;
+}
+.form .input_box select,
+.form .input_box input{
+    height: 40px;
+}
+.form .input_box textarea{
+    min-height: 90px;
+}
+.form  button{
+    border-radius: 10px;
+    background: #FF8B00;
+    padding: 12px 24px;
+    color: #FFF;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.form  button i{
+    color: #fff;
+}
+table td{
+    text-align: left;
+}
+table img{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+.modal_alert.show,
+.update_modal_box.show,
+.modal_data.show{
+    display: block;
+}
+.modal_alert,
+.update_modal_box,
+.modal_data{
+    background-color: rgba(0,0,0,0.4);
+}
+
+.form_check{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Roboto';
+    font-size: 16px;
+}
+.modal_category{
+    background-color: rgba(0,0,0,0.4);
+}
+.modal_category.show{
+    display: block;
+}
+.is-invalid{
+    border: 1px solid red!important;
+}

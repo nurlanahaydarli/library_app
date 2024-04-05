@@ -627,18 +627,24 @@ textarea{
     padding: 20px 30px;
     max-width: 395px;
     width: 100%;
-    /*position: absolute;*/
-    /*left: 0;*/
+    position: absolute;
+    left: 0;
+    max-height: 300px;
+    overflow: auto;
+    display: none;
 }
-.search_result ul li{
+.search_result.show{
+    display: block;
+}
+.search_result  li{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 24px;
     cursor: pointer;
-    /*padding: 5px 0;*/
+    padding: 5px 0;
 }
-.search_result ul li span{
+.search_result  li span{
     color: #BCBCBC;
     font-size: 14px;
     font-style: normal;
@@ -646,7 +652,9 @@ textarea{
     line-height: normal;
 
 }
-
+.search_result  li:hover span{
+    color: var(--main-red);
+}
 .book-form h4{
     color: #333;
     font-size: 30px;

@@ -1,0 +1,94 @@
+.add_book_box{
+    margin: 25px 0;
+}
+.add_book_box .add_book_title h2{
+    color: #333;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%; /* 58.856px */
+}
+.search_container  .search_title{
+    margin-bottom: 10px;
+}
+.search_container  .search_title h4{
+    color: #333;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%; /* 35.314px */
+}
+
+.search_input{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    max-width: 395px;
+    border: 2px solid rgba(57, 31, 0, 0.48);
+    border-radius: 34px;
+    padding: 4px 12px;
+}
+
+.search_input input{
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-family: 'Preahvihear';
+    font-size: 14px;
+    font-weight: 400;
+}
+.search_input button{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.search_input button img{
+    width: 30px;
+}
+
+.search_box{
+    position: relative;
+}
+.search_result{
+    display: none;
+    border-radius: 20px;
+    background-color: #f1f0f0;
+    padding: 10px 2px 10px 6px;
+    max-width: 395px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+
+.book-search-list{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.scroll{
+    height: 140px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.book-btn{
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #BCBCBC;
+    font-family: 'Preahvihear';
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.book-btn:hover{
+    text-decoration: underline;
+    color: #333;
+}

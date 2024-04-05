@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="icon" href="../assets/icon/logo.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/admin-login.css">
+    <link rel="stylesheet" href="../styles/admin-panel.css">
+    <link rel="stylesheet" href="../styles/admin-form.css">
+    <link rel="stylesheet" href="../styles/sweetalert2.min.css">
+    <link rel="stylesheet" href="../styles/search_form.css">
+</head>
+
+<body>
+    <main>
+        <!-- admin-login.css -->
+        <!-- admin-login.js -->
+        <div class="admin-login">
+            <!-- -------- -->
+            <div class="login_logocontainer">
+                <img src="../assets/icon/books.svg" alt="books" />
+                <div class="login-logo-text">
+                    <h1>LIBRARY</h1>
+                    <div class="login-line"></div>
+                    <p>Admin Panel</p>
+                </div>
+            </div>
+            <!-- ---------- -->
+            <div class="login_form">
+                <div>
+                    <h1>Welcome Admin</h1>
+                </div>
+
+                <div class="login_form_info">
+                    <!-- <label class="" for="usarname"></label> -->
+                    <input class="form_infouser" type="text" placeholder="Username" id="userName" />
+
+                    <!-- <label for="password"></label> -->
+                    <input type="password" placeholder="Password" id="password" />
+                    <div class="joinUsAlertBox"></div>
+                    <button id="admin_login_btn" class="login_button" type="submit">
+                        Join
+                    </button>
+                </div>
+            </div>
+            <!-- ---------- -->
+        </div>
+
+        <!-- admin-panel.css -->
+        <div class="admin-panel">
+            <aside id="aside">
+                <div class="logo-container">
+                    <img src="../assets/icon/books.svg" alt="">
+                    <div class="logo-text">
+                        <h1>LIBRARY</h1>
+                        <div class="line"></div>
+                        <p>Admin Panel</p>
+                    </div>
+                    <button class="close-menu" onclick="closeMenuBTN()"><img src="../assets/icon/cloneMenu.svg"
+                            alt=""></button>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#home"><img src="../assets/icon/books.svg" alt="">Home</a></li>
+                        <li><a href="#about-store"><img src="../assets/icon/books.svg" alt="">About</a></li>
+                        <li><a href="#join-us"><img src="../assets/icon/books.svg" alt="">Join Us</a></li>
+                        <li><a href="#books"><img src="../assets/icon/books.svg" alt="">Books</a></li>
+                        <li><a href="#contact-us"><img src="../assets/icon/books.svg" alt="">Contact</a></li>
+                        <li><a id="adminSignOut" href="#"><img src="../assets/icon/books.svg" alt="">Logout</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="container">
+                <div class="mobile-logo-container">
+                    <img src="../assets/icon/books-mobile.svg" alt="">
+                    <div>
+                        <h1>LIBRARY</h1>
+                        <div class="mobile-line"></div>
+                        <p>Book store</p>
+                    </div>
+                </div>
+                <button class="close-menu" onclick="closeMenuBTN()"><img src="../assets/icon/cloneMenu.svg"
+                        alt=""></button>
+
+                <div class="open-menu">
+                    <button onclick="openMenuBTN()"><img src="../assets/icon/hamburgerMenu.svg" alt=""></button>
+                </div>
+                <div class="mobile-logo">
+
+                </div>
+                <div class="account">
+                    <img src="../assets/icon/profile.svg" alt="">
+                    <span>Admin</span>
+                </div>
+
+                <div class="add-book">
+                    <div class="add_book_box">
+                        <div class="add_book_title">
+                            <h2 id="home">Home</h2>
+                        </div>
+                        <div class="search_container">
+                            <div class="search_title">
+                                <h4>Search book</h4>
+                            </div>
+                            <div class="search_box">
+                                <div class="search_input">
+                                    <img src="../assets/icon/search-btn.svg" alt="">
+                                    <input id="bookSearchInput" onkeyup="processChange()" type="text"
+                                        placeholder="Search">
+                                    <button onclick="clearInput()" class="clearInputBtn"><img
+                                            src="../assets/icon/close.svg" alt=""></button>
+                                </div>
+                                <div id="searchResult" class="search_result">
+                                    <ul id="bookSearchList" class="book-search-list scroll">
+
+                                        <!-- <li>
+                                            <span><i class="far fa-clock"></i></span>
+                                            <span>Dan Brown</span>
+                                            <span>Book name</span>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-form">
+                    <h3>Book form</h3>
+                    <div class="add_book_box">
+                        <div class="form">
+                            <div class="input_box">
+                                <label for="book_name">
+                                    Book Name
+                                </label>
+                                <input type="text" id="book_name">
+                            </div>
+                            <div class="input_box">
+                                <label for="author_name">
+                                    Author Name
+                                </label>
+                                <input type="text" id="author_name">
+                            </div>
+                            <div class="input_box">
+                                <label for="book_image_url">
+                                    Book Image Url
+                                </label>
+                                <input type="text" id="book_image_url">
+                            </div>
+                            <div class="input_box">
+                                <label for="book_image_url">
+                                    Publication Year
+                                </label>
+                                <input type="text" id="book_publication_year">
+                            </div>
+                            <div class="form_check">
+                                <input type="checkbox" id="isNew">
+                                <label for="isNew">New</label>
+                            </div>
+                            <div class="form_check">
+                                <input type="checkbox" id="isBestSeller">
+                                <label for="isBestSeller">Best seller</label>
+                            </div>
+                            <div class="input_box">
+                                <label for="description">
+                                    Description
+                                </label>
+                                <textarea name="" id="description"></textarea>
+                            </div>
+                            <div class="input_box">
+                                <label for="book_type">
+                                    Book Type
+                                    <button type="button" class="btn-sm btn btn_book_type"><i
+                                            class="fas fa-plus"></i></button>
+                                </label>
+                                <select name="" id="book_type">
+                                </select>
+                            </div>
+                            <div class="alert_box"></div>
+                            <button type="button" id="add_book">Add</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="about-store">
+                    <h4 id="about-store">About Store</h4>
+                    <div class="add_book_box">
+                        <div class="form">
+                            <div class="input_box">
+                                <label for="aboutTitle">
+                                    Title
+                                </label>
+                                <input type="text" id="aboutTitle">
+                            </div>
+                            <div class="input_box">
+                                <label for="aboutImgURL">
+                                    Image Url
+                                </label>
+                                <input type="text" id="aboutImgURL">
+                            </div>
+                            <div class="input_box">
+                                <label for="aboutDescription">
+                                    Description
+                                </label>
+                                <textarea name="" id="aboutDescription"></textarea>
+                            </div>
+                            <button id='aboutInfoAddBtn'>About info add</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- JOIN SECTION -->
+                <div style="overflow-x:auto;" class="join-us">
+                    <h4 id="join-us" class="title-tables">Join Us</h4>
+                    <table class="join-table">
+                        <thead class="join-first-title">
+                            <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>Email Adress</th>
+                            </tr>
+                        </thead>
+                        <tbody id="joinUsTableBody" class="table-body">
+                            <!-- <tr>
+                                <th>1</th>
+                                <td>Audrey Mckinney</td>
+                                <td>lisa.watson@example.com</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- BOOKS SECTION -->
+                <div style="overflow-x:auto;" class="books">
+                    <h5 id="books" class="title-tables">Books</h5>
+                    <table class="books-table">
+                        <thead class="join-first-title">
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>Author</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body" id="book_data">
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- CONTACT SECTION -->
+                <div style="overflow-x:auto;" class="contact-us">
+                    <h6 id="contact-us" class="title-tables">Contact Us</h6>
+                    <table class="books-table">
+                        <thead class="join-first-title">
+                            <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>Address</th>
+                                <th>Email Address</th>
+                                <th>Phone Number</th>
+                                <th>Note</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="table-body" id="contact_list">
+                        </tbody>
+                    </table>
+                    <!--            <h2 id="home">Home</h2>-->
+                </div>
+            </div>
+        </div>
+        <!-- =========================== Modal ===========================-->
+        <div class="modal modal_category fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Book Type</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="">
+                            <label for="type_name" class="mb-3">Type name</label>
+                            <input type="text" class="form-control" id="type_name">
+                        </div>
+                        <div class="alert_box"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close_category"
+                                data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary book_category_submit">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- =========================== Delete  Modal ===========================-->
+        <div class="modal modal_alert fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel1">Delete</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal_body_custom"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close_alert"
+                                data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger submit_alert">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- =========================== Show data Modal ===========================-->
+        <div class="modal modal_data fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel2">Data</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal_body_show"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close_data"
+                                data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- =========================== Update Book Modal ===========================-->
+        <div class="modal update_modal_box  fade " tabindex="-1" aria-labelledby="exampleModalLabel5"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel5">Data</h5>
+                    </div>
+                    <!-- <form action=""> -->
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label for="book_name" class="form-label">Book Name</label>
+                                    <input type="text" class="form-control" id="book_name_update" name="book_name">
+                                    <input type="hidden" class="form-control" id="book_id" name="book_id">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label for="author_name" class="form-label">Author</label>
+                                    <input type="text" class="form-control" id="author_name_update" name="author_name">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <label for="book_image_url" class="form-label">Image url</label>
+                                    <input type="text" class="form-control" id="book_image_url_update"
+                                        name="book_image_url">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <label for="book_description_update" class="form-label">Description</label>
+                                    <textarea type="text" class="form-control" id="book_description_update"
+                                        name="book_description_update"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label for="book_publication_year" class="form-label">Publication year</label>
+                                    <input type="text" class="form-control" id="book_publication_year_update"
+                                        name="book_publication_year">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label for="book_type" class="form-label">Category</label>
+                                    <select name="book_type_update" id="book_type_update" class="form-control">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3 form-check d-flex align-items-end gap-2">
+                                    <input type="checkbox" class="form-check-input" id="isNew_update"
+                                        name="isNew_update">
+                                    <label class="form-check-label" for="isNew_update">New</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3 form-check d-flex align-items-end gap-2">
+                                    <input type="checkbox" class="form-check-input" id="isBestSeller_update"
+                                        name="isBestSeller_update">
+                                    <label class="form-check-label" for="isBestSeller_update">Best Seller</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close_update"
+                                data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary " id="update_book_btn">Save</button>
+                        </div>
+                    </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <script type="module" src="../js/admin-login.js"></script>
+    <script src="../js/admin-panel.js"></script>
+    <script type="module" src="../js/contact-us.js"></script>
+    <script type="module" src="../js/admin-join-us.js"></script>
+    <script src="../js/admin-add-book.js"></script>
+    <script type="module" src="../js/admin-about.js"></script>
+    <script type="module" src="../js/submit_book.js"></script>
+    <script src="../js/clear_data.js"></script>
+    <script src="../js/sweetalert2.min.js"></script>
+</body>
+
+</html>
