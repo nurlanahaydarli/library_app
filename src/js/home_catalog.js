@@ -59,7 +59,7 @@ function renderCategory(snaphot) {
 window.addEventListener('click',function (e){
    let id_data =  e.target.value
     if (id_data) {
-        window.location.pathname ='/Library-Book-Store/src/pages/catalog.html'
+        window.location.pathname ='/library_app/src/pages/catalog.html'
         localStorage.setItem("category_id",id_data)
     }
     if(!id_data){return}

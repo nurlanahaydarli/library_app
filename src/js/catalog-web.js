@@ -364,44 +364,44 @@ back_btn.addEventListener("click", function () {
     back_btn.style.display = 'none'
 })
 document.getElementById("home_btn").addEventListener("click", function () {
-    let path_name = `/Library-Book-Store/index.html`
+    let path_name = `/library_app/index.html`
     window.location = path_name
 })
 document.getElementById("catalog_btn").addEventListener("click", function () {
-    let path_name = `/Library-Book-Store/src/pages/catalog.html`
+    let path_name = `/library_app/src/pages/catalog.html`
     window.location = path_name
 })
 document.getElementById("about_btn").addEventListener("click", function () {
-    let path_name = `/Library-Book-Store/src/pages/about.html`
+    let path_name = `/library_app/src/pages/about.html`
     window.location = path_name
 })
 document.getElementById("contact_btn").addEventListener("click", function () {
-    let path_name = `/Library-Book-Store/src/pages/contact.html`
+    let path_name = `/library_app/src/pages/contact.html`
     window.location = path_name
 })
 document.getElementById("search_btn").addEventListener("click", function () {
-    let path_name = `/Library-Book-Store/src/pages/search.html`
+    let path_name = `/library_app/src/pages/search.html`
     window.location = path_name
 })
 
 document.querySelector(".home_btn").addEventListener("click", function () {
-    let path_name = `/Library-Book-Store/index.html`
+    let path_name = `/library_app/index.html`
     window.location = path_name
 })
 document.querySelector(".catalog_btn").addEventListener("click", function () {
-    let path_name = `/Library-Book-Store/src/pages/catalog.html`
+    let path_name = `/library_app/src/pages/catalog.html`
     window.location = path_name
 })
 document.querySelector(".about_btn").addEventListener("click", function () {
-    let path_name = `/Library-Book-Store/src/pages/about.html`
+    let path_name = `/library_app/src/pages/about.html`
     window.location = path_name
 })
 document.querySelector(".contact_btn").addEventListener("click", function () {
-    let path_name = `/Library-Book-Store/src/pages/contact.html`
+    let path_name = `/library_app/src/pages/contact.html`
     window.location = path_name
 })
 document.querySelector(".search_btn").addEventListener("click", function () {
-    let path_name = `/Library-Book-Store/src/pages/search.html`
+    let path_name = `/library_app/src/pages/search.html`
     window.location = path_name
 })
 
